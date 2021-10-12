@@ -19,9 +19,9 @@ class InvoiceController extends Controller
 
     public function store(InvoiceRequest $request)
     {
-     /*    DB::beginTransaction();
+        DB::beginTransaction();
 
-        try { */
+        try { 
             $invoice = Invoice::create([
                 'invoice_number'=> $request->invoice_number,
                 'patient_name'  => $request->patient_name,
@@ -42,13 +42,13 @@ class InvoiceController extends Controller
 
             }
 
-        /*     DB::commit();
+            DB::commit();
 
         } catch (Exception $ex) { 
             DB::rollBack();
             return back()->with('error', 'Invoice Not add');
 
-        } */
+        } 
         return back()->with('success', 'Succesfully Added');
     }
 }
